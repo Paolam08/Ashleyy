@@ -2,32 +2,38 @@
 <head>
     <title>Mi Página</title>
     <style>
-        .separador {
-            border: none;
-            border-top: 5px solid black;
-            margin-top: 10px; /* Ajusta este valor para el espacio superior */
-            margin-bottom: 5px; /* Ajusta este valor para el espacio inferior */
+        .barra-negra {
+            background-color: black;
+            color: white; /* O el color de texto que desees */
+            padding: 10px 0; /* Ajusta el padding vertical para el espacio dentro de la barra */
+            text-align: center; /* Centra los enlaces horizontalmente */
         }
-        .enlaces {
-            /* Puedes agregar estilos adicionales a los enlaces si lo deseas */
+
+        .barra-negra a {
+            color: white; /* Color de los enlaces */
+            text-decoration: none; /* Elimina el subrayado de los enlaces */
+            margin: 0 15px; /* Espacio entre los enlaces */
+        }
+
+        .barra-negra a:hover {
+            /* Estilos al pasar el ratón por encima de los enlaces (opcional) */
+            text-decoration: underline;
         }
     </style>
 </head>
     <body bgcolor="orange">
-<body>
         <center>
             <img src="campero.png" alt="Fotografía" width="450" height="300"><br>
             <font size="34" face="tahoma" color="#7D6E9F">
             </font>
             <br>
 
-            <hr class="separador">
-            <div class="enlaces">
+            <div class="barra-negra">
                 <a href="Inicio.html">Inicio</a>
                 <a href="Menú.html">Menú</a>
                 <a href="Ordenar.html">Ordenar</a>
                 <a href="Contáctanos.html">Contáctanos</a>
             </div>
         </center>
-</body>
+    </body>
 </html>
