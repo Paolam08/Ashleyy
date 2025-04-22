@@ -8,21 +8,61 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
+
+        hr#linea-superior {
+            size: 30;
+            noshade;
+            color: pink;
+            border: none; /* Elimina el borde predeterminado */
+            height: 30px; /* Asegura que tenga la altura deseada */
+            position: absolute;
+            bottom: 110px; /* Ajusta este valor según la altura de los enlaces y el espacio */
+            left: 50%;
+            transform: translateX(-50%); /* Centra la línea horizontalmente */
+            width: 80%; /* Ajusta el ancho de la línea si es necesario */
+            z-index: 1; /* Asegura que esté por encima de los enlaces */
+        }
+
+        .enlaces {
+            position: relative; /* Crea un contexto de posicionamiento para la línea */
+            margin-top: 20px; /* Espacio entre la imagen y los enlaces */
+        }
+
+        .enlaces a {
+            font-size: 16px; /* Ajusta el tamaño de la fuente */
+            font-family: tahoma;
+            color: #7D6E9F;
+            text-decoration: none;
+            margin: 0 15px; /* Espacio entre los enlaces */
+            position: relative; /* Para controlar el z-index si fuera necesario */
+            z-index: 2; /* Asegura que los enlaces estén por encima de la línea */
+        }
+
+        hr#linea-inferior {
+            size: 12;
+            color: pink;
+            noshade;
+            border: none; /* Elimina el borde predeterminado */
+            height: 12px; /* Asegura que tenga la altura deseada */
+            margin-top: 20px; /* Espacio entre los enlaces y la línea inferior */
+        }
     </style>
 </head>
 <body>
-    
+
     <center>
-        <hr size="30" noshade color="pink">
+        <hr id="linea-superior">
         <img src="pollo.png" alt="Fotografía" width="325" height="450"><br>
         <font size="34" face="tahoma" color="#7D6E9F">
         </font>
         <br>
-        <hr size="12" color="pink" noshade>
-        <a href="info.html">Inicio</a>
-        <a href="estudios.html">Menu</a>
-        <a href="datos.html">Ordenar</a>
-        <a href="otros.html">Contáctanos</a>
+        <div class="enlaces">
+            <a href="info.html">Inicio</a>
+            <a href="estudios.html">Menu</a>
+            <a href="datos.html">Ordenar</a>
+            <a href="otros.html">Contáctanos</a>
+        </div>
+        <hr id="linea-inferior">
     </center>
 </body>
 </html>
