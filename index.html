@@ -8,21 +8,38 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
+        .contenedor-imagen-enlaces {
+            display: flex; /* Para alinear los elementos en línea */
+            align-items: center; /* Para alinear verticalmente los elementos al centro */
+            justify-content: center; /* Para centrar los elementos horizontalmente (opcional) */
+        }
+
+        .contenedor-imagen-enlaces img {
+            margin-right: 10px; /* Espacio entre la imagen y el primer enlace (opcional) */
+        }
+
+        .contenedor-imagen-enlaces a {
+            margin-left: 10px; /* Espacio entre los enlaces (opcional) */
+            text-decoration: none; /* Opcional: quitar el subrayado de los enlaces */
+            color: #000; /* Opcional: establecer un color de texto para los enlaces */
+        }
     </style>
 </head>
 <body>
-    
+
     <center>
         <hr size="30" noshade color="pink">
-        <img src="pollo.png" alt="Fotografía" width="325" height="450"><br>
+        <div class="contenedor-imagen-enlaces">
+            <img src="pollo.png" alt="Fotografía" width="150" height="200"> <a href="info.html">Inicio</a>
+            <a href="estudios.html">Menu</a>
+            <a href="datos.html">Ordenar</a>
+            <a href="otros.html">Contáctanos</a>
+        </div>
+        <br>
         <font size="34" face="tahoma" color="#7D6E9F">
         </font>
         <br>
         <hr size="12" color="pink" noshade>
-        <a href="info.html">Inicio</a>
-        <a href="estudios.html">Menu</a>
-        <a href="datos.html">Ordenar</a>
-        <a href="otros.html">Contáctanos</a>
     </center>
 </body>
 </html>
