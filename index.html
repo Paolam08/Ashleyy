@@ -1,45 +1,81 @@
 <html>  
 <head>  
     <title>Mi Página</title>  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>  
-         body {  
+        body {  
             background-image: url("WhatsApp Image 2025-04-25 at 5.33.08 AM.jpeg");  
             background-size: cover;   
             background-repeat: no-repeat;   
             background-attachment: fixed;   
-            }   
+            margin: 0;
+        }   
+
         .barra-negra {  
             background-color: black;  
-            color: white; /* O el color de texto que desees */  
-            padding: 10px 0; /* Ajusta el padding vertical para el espacio dentro de la barra */  
-            text-align: center; /* Centra los enlaces horizontalmente */  
-        }  .barra-negra a {  
-        color: white; /* Color de los enlaces */  
-        text-decoration: none; /* Elimina el subrayado de los enlaces */  
-        margin: 0 15px; /* Espacio entre los enlaces */  
-    }  
+            color: white;  
+            padding: 10px 0;  
+            text-align: center;  
+            display: none; /* Oculta el menú inicialmente en móvil */
+            flex-direction: column;
+        }
 
-    .barra-negra a:hover {  
-        /* Estilos al pasar el ratón por encima de los enlaces (opcional) */  
-        text-decoration: underline;  
-    }  
-</style>
+        .barra-negra a {  
+            color: white;  
+            text-decoration: none;  
+            margin: 10px 0;  
+            display: block;
+        }  
 
+        .barra-negra a:hover {  
+            text-decoration: underline;  
+        }  
+
+        .menu-btn {
+            background-color: #333;
+            color: white;
+            padding: 8px 12px;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            display: none;
+            margin: 10px auto;
+            border-radius: 5px; /* Hacemos que los bordes sean redondeados */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Le damos una sombra sutil */
+        }
+
+        @media (max-width: 768px) {
+            .menu-btn {
+                display: block;
+            }
+        }
+    </style>
 </head>  
-    <body bgcolor="">  
-        <center>  
-            <img src="a2afbb6c1cd4fbec89499da9a619c66e.jpg" alt="Fotografía" width="450" height="300"><br>  
-            <font size="34" face="tahoma" color="#7D6E9F">  
-            </font>  
-            <br>  <div class="barra-negra">  
+<body>  
+    <center>  
+        <img src="a2afbb6c1cd4fbec89499da9a619c66e.jpg" alt="Fotografía" width="450" height="300"><br>  
+
+        <!-- Botón para mostrar menú en móvil -->
+        <button class="menu-btn" onclick="toggleMenu()">Menú</button>
+
+        <!-- Barra de navegación -->
+        <div class="barra-negra" id="barraMenu">  
             <a href="Inicio.html">Inicio</a>  
-            <a href="Menú.html">Galeria</a>  
+            <a href="Menú.html">Galería</a>  
             <a href="Ordenar.html">Pedir</a>  
             <a href="Contáctanos.html">Contáctanos</a>  
         </div>  
     </center>  
 
-</body>
-
-</html> 
-
+    <script>
+        function toggleMenu() {
+            var barra = document.getElementById("barraMenu");
+            if (barra.style.display === "flex" || barra.style.display === "block") {
+                barra.style.display = "none";
+            } else {
+                barra.style.display = "flex";
+            }
+        }
+    </script>
+</body>  
+</html>
