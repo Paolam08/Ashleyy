@@ -16,7 +16,7 @@
             color: white;  
             padding: 10px 0;  
             text-align: center;  
-            display: none; /* Inicialmente el menú está oculto */
+            display: block; /* Ahora se muestra siempre por defecto */
             flex-direction: column;
         }
 
@@ -48,6 +48,10 @@
             .menu-btn {
                 display: block; /* Se muestra el botón solo en pantallas pequeñas */
             }
+
+            .barra-negra {
+                display: none; /* La barra se oculta en pantallas pequeñas por defecto */
+            }
         }
     </style>
 </head>  
@@ -71,11 +75,11 @@
         // Función para mostrar/ocultar el menú
         function toggleMenu() {
             var barra = document.getElementById("barraMenu");
-            // Cambiar el display de "none" a "block" o "none"
-            if (barra.style.display === "none" || barra.style.display === "") {
-                barra.style.display = "block";  // Muestra el menú
+            // Si el menú está oculto, lo mostramos, si está visible, lo ocultamos
+            if (barra.style.display === "none") {
+                barra.style.display = "block";
             } else {
-                barra.style.display = "none";   // Oculta el menú
+                barra.style.display = "none";
             }
         }
     </script>
