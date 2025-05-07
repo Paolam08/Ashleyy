@@ -16,8 +16,11 @@
             color: white;  
             padding: 10px 0;  
             text-align: center;  
-            display: block; /* Ahora se muestra siempre por defecto */
+            display: none; /* Inicialmente oculta */
             flex-direction: column;
+            height: 0; /* Sin altura inicial */
+            overflow: hidden; /* Oculta el contenido cuando la barra está cerrada */
+            transition: height 0.5s ease-out; /* Animación suave */
         }
 
         .barra-negra a {  
@@ -38,19 +41,15 @@
             font-size: 14px;
             border: none;
             cursor: pointer;
-            display: none; /* Solo se muestra en pantallas pequeñas */
+            display: block; /* Asegura que el botón sea visible */
             margin: 10px auto;
-            border-radius: 5px; /* Bordes redondeados */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         @media (max-width: 768px) {
             .menu-btn {
                 display: block; /* Se muestra el botón solo en pantallas pequeñas */
-            }
-
-            .barra-negra {
-                display: none; /* La barra se oculta en pantallas pequeñas por defecto */
             }
         }
     </style>
@@ -75,11 +74,16 @@
         // Función para mostrar/ocultar el menú
         function toggleMenu() {
             var barra = document.getElementById("barraMenu");
-            // Si el menú está oculto, lo mostramos, si está visible, lo ocultamos
-            if (barra.style.display === "none") {
-                barra.style.display = "block";
+            
+            // Si la barra está oculta (altura 0), la desplegamos, si está visible, la ocultamos
+            if (barra.style.height === "0px" || barra.style.height === "") {
+                barra.style.display = "block"; // Aseguramos que el menú se muestre
+                barra.style.height = "200px"; // Ajusta la altura según el contenido del menú
             } else {
-                barra.style.display = "none";
+                barra.style.height = "0px"; // Ocultamos la barra de nuevo
+                setTimeout(function() {
+                    barra.style.display = "none"; // Después de ocultarse, se oculta completamente
+                }, 500); // Tiempo que dura la animación (500ms)
             }
         }
     </script>
