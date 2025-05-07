@@ -16,7 +16,7 @@
             color: white;  
             padding: 10px 0;  
             text-align: center;  
-            display: none; /* Oculta el menú inicialmente en móvil */
+            display: none; /* Inicialmente el menú está oculto */
             flex-direction: column;
         }
 
@@ -34,17 +34,19 @@
         .menu-btn {
             background-color: #333;
             color: white;
-            padding: 10px 20px;
-            font-size: 18px;
+            padding: 8px 12px;
+            font-size: 14px;
             border: none;
             cursor: pointer;
-            display: none;
+            display: none; /* Solo se muestra en pantallas pequeñas */
             margin: 10px auto;
+            border-radius: 5px; /* Bordes redondeados */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
         }
 
         @media (max-width: 768px) {
             .menu-btn {
-                display: block;
+                display: block; /* Se muestra el botón solo en pantallas pequeñas */
             }
         }
     </style>
@@ -66,12 +68,14 @@
     </center>  
 
     <script>
+        // Función para mostrar/ocultar el menú
         function toggleMenu() {
             var barra = document.getElementById("barraMenu");
-            if (barra.style.display === "flex" || barra.style.display === "block") {
-                barra.style.display = "none";
+            // Cambiar el display de "none" a "block" o "none"
+            if (barra.style.display === "none" || barra.style.display === "") {
+                barra.style.display = "block";  // Muestra el menú
             } else {
-                barra.style.display = "flex";
+                barra.style.display = "none";   // Oculta el menú
             }
         }
     </script>
