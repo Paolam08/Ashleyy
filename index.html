@@ -1,38 +1,40 @@
-<html>  
-<head>  
-    <title>Mi Página</title>  
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Página</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>  
-        body {  
-            background-image: url("WhatsApp Image 2025-04-25 at 5.33.08 AM.jpeg");  
-            background-size: cover;   
-            background-repeat: no-repeat;   
-            background-attachment: fixed;   
+    <style>
+        body {
+            background-image: url("WhatsApp Image 2025-04-25 at 5.33.08 AM.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             margin: 0;
-        }   
-
-        .barra-negra {  
-            background-color: black;  
-            color: white;  
-            padding: 10px 0;  
-            text-align: center;  
-            display: none; /* Inicialmente oculta */
-            flex-direction: column;
-            height: 0; /* Sin altura inicial */
-            overflow: hidden; /* Oculta el contenido cuando la barra está cerrada */
-            transition: height 0.5s ease-out; /* Animación suave */
         }
 
-        .barra-negra a {  
-            color: white;  
-            text-decoration: none;  
-            margin: 10px 0;  
-            display: block;
-        }  
+        .barra-negra {
+            background-color: black;
+            color: white;
+            padding: 10px 20px; /* Añadí un poco de padding horizontal */
+            text-align: center;
+            display: flex; /* Usamos flexbox para la disposición horizontal */
+            justify-content: center; /* Centramos los enlaces horizontalmente */
+            align-items: center; /* Centramos los enlaces verticalmente */
+            height: auto; /* Ajustamos la altura automáticamente al contenido */
+            overflow: visible; /* Mostramos el contenido siempre */
+            transition: none; /* Removemos la transición para que no se anime al cargar */
+        }
 
-        .barra-negra a:hover {  
-            text-decoration: underline;  
-        }  
+        .barra-negra a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px; /* Espacio entre los enlaces */
+            display: block;
+        }
+
+        .barra-negra a:hover {
+            text-decoration: underline;
+        }
 
         .menu-btn {
             background-color: #333;
@@ -41,40 +43,52 @@
             font-size: 14px;
             border: none;
             cursor: pointer;
-            display: block; /* Asegura que el botón sea visible */
+            display: none; /* Ocultamos el botón en pantallas grandes inicialmente */
             margin: 10px auto;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
+        /* Media query para pantallas más pequeñas (móviles) */
         @media (max-width: 768px) {
+            .barra-negra {
+                display: none; /* Ocultamos la barra horizontal en móviles inicialmente */
+                flex-direction: column;
+                height: 0;
+                overflow: hidden;
+                transition: height 0.5s ease-out;
+                padding: 10px 0;
+            }
+
+            .barra-negra a {
+                margin: 10px 0;
+            }
+
             .menu-btn {
-                display: block; /* Se muestra el botón solo en pantallas pequeñas */
+                display: block; /* Mostramos el botón en pantallas pequeñas */
             }
         }
     </style>
-</head>  
-<body>  
-    <center>  
-        <img src="a2afbb6c1cd4fbec89499da9a619c66e.jpg" alt="Fotografía" width="450" height="300"><br>  
+</head>
+<body>
+    <center>
+        <img src="a2afbb6c1cd4fbec89499da9a619c66e.jpg" alt="Fotografía" width="450" height="300"><br>
 
-        <!-- Botón para mostrar menú en móvil -->
         <button class="menu-btn" onclick="toggleMenu()">Menú</button>
 
-        <!-- Barra de navegación -->
-        <div class="barra-negra" id="barraMenu">  
-            <a href="Inicio.html">Inicio</a>  
-            <a href="Menú.html">Galería</a>  
-            <a href="Ordenar.html">Pedir</a>  
-            <a href="Contáctanos.html">Contáctanos</a>  
-        </div>  
-    </center>  
+        <div class="barra-negra" id="barraMenu">
+            <a href="Inicio.html">Inicio</a>
+            <a href="Menú.html">Galería</a>
+            <a href="Ordenar.html">Pedir</a>
+            <a href="Contáctanos.html">Contáctanos</a>
+        </div>
+    </center>
 
     <script>
         // Función para mostrar/ocultar el menú
         function toggleMenu() {
             var barra = document.getElementById("barraMenu");
-            
+
             // Si la barra está oculta (altura 0), la desplegamos, si está visible, la ocultamos
             if (barra.style.height === "0px" || barra.style.height === "") {
                 barra.style.display = "block"; // Aseguramos que el menú se muestre
@@ -87,5 +101,5 @@
             }
         }
     </script>
-</body>  
+</body>
 </html>
